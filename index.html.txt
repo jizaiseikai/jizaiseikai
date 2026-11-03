@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自在清海株式会社 | 夢の店 (Yume no Mise)</title>
+  <style>
+    :root {
+      --primary: #1a2b4c;
+      --accent: #c5a059;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text: #2c3e50;
+      --text-muted: #6c757d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* 导航栏 */
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-left: 8px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .lang-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #2c3e50 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #dcdcdc;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* 主要容器 */
+    .container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* 板块通用 */
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 4px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* 产品与业务 */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid #edf2f7;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* 展厅及公司信息 */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .info-table th, .info-table td {
+      padding: 1rem 1.2rem;
+      text-align: left;
+      border-bottom: 1px solid #edf2f7;
+      font-size: 0.95rem;
+    }
+
+    .info-table th {
+      background: #f1f5f9;
+      color: var(--primary);
+      width: 30%;
+      font-weight: 600;
+    }
+
+    /* 页脚 */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #edf2f7;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">自在清海株式会社 <span>夢の店</span></a>
+      <button class="lang-btn" onclick="toggleLanguage()">切換爲日文 (日本語)</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1 id="hero-title">品质生活与时尚商品的聚集地</h1>
+    <p id="hero-sub">自在清海株式会社旗下展示厅「夢の店」，立足大阪船场，为您提供精选穿戴甲、服饰及优质商品。</p>
+  </div>
+
+  <div class="container">
+    
+    <!-- 业务范围 -->
+    <section>
+      <h2 class="section-title" id="title-business">主要业务与经营项目</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 id="card1-title">手工穿戴甲 (Press-on Nails)</h3>
+          <p id="card1-desc">精细工艺设计，提供高品质美甲贴片与手部艺术穿戴搭配，兼具时尚与便利。</p>
+        </div>
+        <div class="card">
+          <h3 id="card2-title">服饰与流行杂货</h3>
+          <p id="card2-desc">精选优质服装、包袋及特色饰品，兼顾日常实用与时尚美感。</p>
+        </div>
+        <div class="card">
+          <h3 id="card3-title">批发展厅与采购服务</h3>
+          <p id="card3-desc">实体展示厅直观呈现产品细节，支持现场采购及灵活的商业合作需求。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 公司及展厅信息 -->
+    <section>
+      <h2 class="section-title" id="title-info">展厅及公司概况</h2>
+      <table class="info-table">
+        <tr>
+          <th id="th-company">公司名称</th>
+          <td id="td-company">自在清海株式会社</td>
+        </tr>
+        <tr>
+          <th id="th-store">展厅 / 屋号</th>
+          <td id="td-store">夢の店 (Yume no Mise)</td>
+        </tr>
+        <tr>
+          <th id="th-address">展厅地址</th>
+          <td id="td-address">大阪府大阪市中央区船场中央3丁目2号 船场中心大厦8号馆 B1F</td>
+        </tr>
+        <tr>
+          <th id="th-access">交通指引</th>
+          <td id="td-access">Osaka Metro 御堂筋线 / 中央线 / 四桥线「本町站」直达</td>
+        </tr>
+        <tr>
+          <th id="th-business">经营范围</th>
+          <td id="td-business">穿戴甲、服装百货、杂货零售与批发、跨境贸易支持</td>
+        </tr>
+      </table>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 自在清海株式会社 (ZIZAI SEIKAI Co., Ltd.) All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    let isChinese = true;
+
+    const langData = {
+      zh: {
+        btnText: "切換爲日文 (日本語)",
+        heroTitle: "品质生活与时尚商品的聚集地",
+        heroSub: "自在清海株式会社旗下展示厅「夢の店」，立足大阪船场，为您提供精选穿戴甲、服饰及优质商品。",
+        titleBusiness: "主要业务与经营项目",
+        card1Title: "手工穿戴甲 (Press-on Nails)",
+        card1Desc: "精细工艺设计，提供高品质美甲贴片与手部艺术穿戴搭配，兼具时尚与便利。",
+        card2Title: "服饰与流行杂货",
+        card2Desc: "精选优质服装、包袋及特色饰品，兼顾日常实用与时尚美感。",
+        card3Title: "批发展厅与采购服务",
+        card3Desc: "实体展示厅直观呈现产品细节，支持现场采购及灵活的商业合作需求。",
+        titleInfo: "展厅及公司概况",
+        thCompany: "公司名称",
+        tdCompany: "自在清海株式会社",
+        thStore: "展厅 / 屋号",
+        tdStore: "夢の店 (Yume no Mise)",
+        thAddress: "展厅地址",
+        tdAddress: "大阪府大阪市中央区船场中央3丁目2号 船场中心大厦8号馆 B1F",
+        thAccess: "交通指引",
+        tdAccess: "Osaka Metro 御堂筋线 / 中央线 / 四桥线「本町站」直达",
+        thBusiness: "经营范围",
+        tdBusiness: "穿戴甲、服装百货、杂货零售与批发、跨境贸易支持"
+      },
+      ja: {
+        btnText: "切换为中文",
+        heroTitle: "上質なライフスタイルとファッションをお届け",
+        heroSub: "自在清海株式会社が運営するショールーム「夢の店」。大阪船場にてネイルチップや服飾雑貨をご提供しております。",
+        titleBusiness: "主要事業・取扱商品",
+        card1Title: "ネイルチップ (Press-on Nails)",
+        card1Desc: "デザイン性と品質にこだわった手元を彩るネイルチップをお届けします。",
+        card2Title: "アパレル・ファッション雑貨",
+        card2Desc: "厳選されたウェア、バッグ、アクセサリーなど幅広く取り扱っております。",
+        card3Title: "ショールーム・卸売対応",
+        card3Desc: "実店舗にて商品をご確認いただけます。小ロットからの仕入れ・ご相談も歓迎いたします。",
+        titleInfo: "ショールーム・会社概要",
+        thCompany: "会社名",
+        tdCompany: "自在清海株式会社",
+        thStore: "店舗名 / 屋号",
+        tdStore: "夢の店 (ユメノミセ)",
+        thAddress: "所在地",
+        tdAddress: "大阪府大阪市中央区船場中央3丁目2号 船場センタービル8号館 B1F",
+        thAccess: "アクセス",
+        tdAccess: "Osaka Metro 御堂筋線・中央線・四ツ橋線「本町駅」直结",
+        thBusiness: "事業内容",
+        tdBusiness: "ネイルチップ・服飾雑貨・日用品の販売および卸売"
+      }
+    };
+
+    function toggleLanguage() {
+      isChinese = !isChinese;
+      const data = isChinese ? langData.zh : langData.ja;
+
+      document.querySelector('.lang-btn').innerText = data.btnText;
+      document.getElementById('hero-title').innerText = data.heroTitle;
+      document.getElementById('hero-sub').innerText = data.heroSub;
+      document.getElementById('title-business').innerText = data.titleBusiness;
+      document.getElementById('card1-title').innerText = data.card1Title;
+      document.getElementById('card1-desc').innerText = data.card1Desc;
+      document.getElementById('card2-title').innerText = data.card2Title;
+      document.getElementById('card2-desc').innerText = data.card2Desc;
+      document.getElementById('card3-title').innerText = data.card3Title;
+      document.getElementById('card3-desc').innerText = data.card3Desc;
+      document.getElementById('title-info').innerText = data.titleInfo;
+      document.getElementById('th-company').innerText = data.thCompany;
+      document.getElementById('td-company').innerText = data.tdCompany;
+      document.getElementById('th-store').innerText = data.thStore;
+      document.getElementById('td-store').innerText = data.tdStore;
+      document.getElementById('th-address').innerText = data.thAddress;
+      document.getElementById('td-address').innerText = data.tdAddress;
+      document.getElementById('th-access').innerText = data.thAccess;
+      document.getElementById('td-access').innerText = data.tdAccess;
+      document.getElementById('th-business').innerText = data.thBusiness;
+      document.getElementById('td-business').innerText = data.tdBusiness;
+    }
+  </script>
+</body>
+</html>
